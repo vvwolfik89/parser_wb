@@ -1,0 +1,115 @@
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby "2.7.0"
+
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.0"
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
+gem "rest-client"
+gem "execjs"
+gem 'faker'
+gem 'openssl'
+# gem 'selenium-webdriver'
+
+gem 'devise'
+
+gem 'sidekiq'
+# Use sqlite3 as the database for Active Record
+
+# Use the Puma web server [https://github.com/puma/puma]
+
+
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Redis adapter to run Action Cable in production
+gem "redis", "~> 4.0"
+
+gem "open-uri"
+
+gem "nokogiri"
+
+gem 'proxy_fetcher'
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+gem 'rubyzip'
+gem 'caxlsx'
+gem 'caxlsx_rails'
+
+gem "net-http"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+gem "roo"
+
+# Reduces boot times through caching; required in config/boot.rb
+
+
+gem 'bootstrap', '~> 5.0.0.beta3'
+gem 'bootstrap-tagsinput-rails'
+gem 'popper_js', '~> 2.9.2'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'foreman'
+gem "cancancan"
+# Use Sass to process CSS
+# gem "sassc-rails"
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+end
+
+group :development do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+end
+
+group :production, :development do
+  gem "mysql2"
+  gem "puma", "5.6.1"
+  gem "importmap-rails", "1.0.2"
+  gem "turbo-rails", "1.0.1"
+  gem "bootsnap", "1.10.2"
+  gem "msgpack", "1.4.4"
+  gem "webpacker"
+end

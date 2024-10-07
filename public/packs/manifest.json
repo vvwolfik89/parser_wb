@@ -1,0 +1,34 @@
+{
+  "application.js": "/packs/js/application-c0e9fd09b819ebfdecf3.js",
+  "application.js.map": "/packs/js/application-c0e9fd09b819ebfdecf3.js.map",
+  "dashboard.js": "/packs/js/dashboard-a4825a97f5998e0c9ffc.js",
+  "dashboard.js.map": "/packs/js/dashboard-a4825a97f5998e0c9ffc.js.map",
+  "dataratings.js": "/packs/js/dataratings-a74803ea8225add8b5ed.js",
+  "dataratings.js.map": "/packs/js/dataratings-a74803ea8225add8b5ed.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-c0e9fd09b819ebfdecf3.js"
+      ],
+      "js.map": [
+        "/packs/js/application-c0e9fd09b819ebfdecf3.js.map"
+      ]
+    },
+    "dashboard": {
+      "js": [
+        "/packs/js/dashboard-a4825a97f5998e0c9ffc.js"
+      ],
+      "js.map": [
+        "/packs/js/dashboard-a4825a97f5998e0c9ffc.js.map"
+      ]
+    },
+    "dataratings": {
+      "js": [
+        "/packs/js/dataratings-a74803ea8225add8b5ed.js"
+      ],
+      "js.map": [
+        "/packs/js/dataratings-a74803ea8225add8b5ed.js.map"
+      ]
+    }
+  }
+}
