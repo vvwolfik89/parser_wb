@@ -6,9 +6,9 @@ styles = {
   header_table_style: wb.styles.add_style(b: true, sz: 12),
   }
 
-wb.add_worksheet(name: "#{@part.o_e}-#{@part.created_at.to_date}") do |sheet|
+wb.add_worksheet(name: "#{@Product.o_e}-#{@Product.created_at.to_date}") do |sheet|
   # Create the header row
-  sheet.add_row [@part.title, @part.brand, @part.detail_num, @part.o_e, @part.own_id]
+  sheet.add_row [@Product.title, @Product.brand, @Product.detail_num, @Product.o_e, @Product.own_id]
   sheet.add_row ["НАИМЕНОВАНИЕ",	"Поставщики/предложения",	"ДОСТУПНО",	"ЦЕНА",	"срок поставки, дней"]
   # Create entries for each item
   @data_ratings.each do |data_rating|

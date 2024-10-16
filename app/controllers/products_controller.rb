@@ -1,58 +1,59 @@
 class ProductsController < ApplicationController
   def index
-    @parts = Product.all#.with_field_keyword(params[:keyword])
+    @products = Product.all#.with_field_keyword(params[:keyword])
   end
 
   def show
-    @part = Part.includes(:data_ratings).find(params[:id])
-    @data_ratings = @part.data_ratings
+    # @product = Product.includes(:data_ratings).find(params[:id])
+    @product = Product.find(params[:id])
+    # @data_ratings = @product.data_ratings
     respond_to do |format|
-      format.xlsx {
-        response.headers[
-          'Content-Disposition'
-        ] = "attachment; filename=items.xlsx"
-      }
+      # format.xlsx {
+      #   response.headers[
+      #     'Content-Disposition'
+      #   ] = "attachment; filename=items.xlsx"
+      # }
       format.html { render :show }
     end
   end
 
   def new
-    @part = Part.new
+    @product = Product.new
   end
 
   def create
-    @part = Part.new(resource_params)
+    @product = Product.new(resource_params)
 
-    if @part.save
-      redirect_to @part
+    if @product.save
+      redirect_to @product
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @part = Part.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @part = Part.find(params[:id])
+    @product = Product.find(params[:id])
     respond_to do |format|
-      if @part.update(resource_params)
+      if @product.update(resource_params)
         # @user.avatar.attach(params[:avatar])
-        format.html { redirect_to @part, notice: 'Part was successfully updated.' }
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: :edit }
-        format.json { render json: @part.errors, status: :unprocessable_entity }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @part.destroy
+    @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to parts_url }
+      format.html { redirect_to products_url }
       format.json { head :no_content }
     end
   end
@@ -72,6 +73,6 @@ class ProductsController < ApplicationController
 
   private
   def resource_params
-    params.require(:part).permit(:title, :brand, :describe, :detail_num, :o_e)
+    params.require(:product).permit(:title, :num, :count, :body)
   end
 end
