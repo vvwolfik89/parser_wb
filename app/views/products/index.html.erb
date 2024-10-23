@@ -7,20 +7,25 @@
   link_to 'New product',
           new_product_path, class: "import_Product_link"
 %>
-<%# @Products.each do |Product| %>
-<!--  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
-<!--    <div class="btn-toolbar mb-2 mb-md-0">-->
-      <%#= link_to Product_path(Product) do %>
-<!--        <h4><%#= Product.title %></h4>-->
-      <%# end %>
+<% @products.each do |product| %>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <%= link_to product_path(product) do %>
+        <h4><%= product.title %></h4>
+      <% end %>
 <!--      <p><%#= Product.brand %></p>-->
 <!--      <p><%#= Product.detail_num %></p>-->
 <!--      <p><%#= Product.o_e %></p>-->
 <!--      <p><%#= Product.own_id %></p>-->
-<!--      <div class="btn-group me-2">-->
-        <%#= link_to 'Edit', edit_Product_path(Product), class: "btn btn-sm btn-outline-secondary" %>
-        <%#= link_to 'Show', Product_path(Product), class: "btn btn-sm btn-outline-secondary" %>
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<%# end %>
+      <div class="btn-group me-2">
+        <%= link_to 'Edit', edit_product_path(product), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to 'Show', product_path(product), class: "btn btn-sm btn-outline-secondary" %>
+        <%#= link_to 'Delete', product_path(product), method: :delete, "btn btn-sm btn-outline-secondary" %>
+        <li><%= link_to "Destroy", product_path(product), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %></li>
+      </div>
+    </div>
+  </div>
+<% end %>
