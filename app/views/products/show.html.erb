@@ -1,0 +1,60 @@
+
+<div>
+  <div class="col-sm">
+    <%= link_to 'Edit', edit_product_path(@product) %>
+  </div>
+  <div class="col-sm">
+    <%= link_to 'All', products_path, style: 'color: #0d6efd;' %>
+  </div>
+  <div class="col-sm">
+    <%= link_to 'Download as Excel', product_path(@product, @data_ratings, format: :xlsx), style: "color: red" %>
+  </div>
+</div>
+<div class="container Product_show_container">
+  <div class="row Product_row">
+    <div id= "Product_info" class="col-sm">
+        <p>Описание: <%= @product.title %></p>
+        <p>Брэнд: <%= @product.num %></p>
+        <p>Номер: <%= @product.count %></p>
+        <p>O_E: <%= @product.body %></p>
+    </div>
+
+
+<!--    <table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">-->
+<!--      <thead>-->
+<!--      <tr>-->
+
+<!--        <th>НАИМЕНОВАНИЕ</th>-->
+<!--        <th>Поставщики/предложения</th>-->
+<!--        <th>ДОСТУПНО</th>-->
+<!--        <th>ОЖИДАЕТСЯ В ОФИСЕ</th>-->
+<!--        <th>ЦЕНА</th>-->
+<!--        <th>срок поставки, дней</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+
+<!--      <tbody>-->
+      <%# @data_ratings.each do |data_rating| %>
+<!--        <tr>-->
+<!--          <th>-->
+            <%#= data_rating.created_at %>
+<!--          </th>-->
+<!--        </tr>-->
+        <%# data_rating.data.each do |data| %>
+<!--          <tr>-->
+
+<!--            <th style="padding-left: 10px"><%#= data['name'] %></th>-->
+<!--            <th style="padding-left: 10px"><%#= data['supCode'] %></th>-->
+<!--            <th style="padding-left: 10px"><%#= data['count'] %></th>-->
+<!--                    <th style="padding-left: 10px"><%##= data['name'] %></th>-->-->
+<!--            <th style="padding-left: 10px"><%#= data['sum'] %></th>-->
+<!--            <th style="padding-left: 10px"><%#= data['hours'] / 24 if data['hours'] %></th>-->
+
+<!--          </tr>-->
+        <%# end %>
+      <%# end %>
+<!--      </tbody>-->
+<!--    </table>-->
+
+  </div>
+</div>
