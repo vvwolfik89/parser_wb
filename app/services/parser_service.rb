@@ -5,8 +5,8 @@ class ParserService
 
   attr_reader :part
 
-  def initialize(part)
-    @part = part
+  def initialize(product)
+    @product = product
   end
 
   def show_data
@@ -14,18 +14,18 @@ class ParserService
     # manager.raw_proxies
 
     # proxy = manager.raw_proxies.sample
-    data = build_data(part) #, proxy)
-    save_data_rating(data, part) if data.present?
+    data = build_data(@product) #, proxy)
+    save_data_rating(data, @product) if data.present?
       # [part.id, saved_value]
   end
 
   protected
 
-  def build_data(part) #, proxy)
+  def build_data(product) #, proxy)
 
     # proxy = "42.200.57.252:3128"
 
-    o_e = part.o_e
+    o_e = product.title
     url = "https://tehnomir.com.ua/index.php?r=product%2Fsearch&SearchForm%5Bcode%5D=#{o_e}&SearchForm%5BbrandId%5D=&SearchForm%5BprofitLevel%5D=&SearchForm%5BdaysFrom%5D=&SearchForm%5BdaysTo%5D=&sort=priceOuterPrice&SearchForm%5BcatalogRequest%5D="
 
     html = URI.open(url) #, :proxy => "http:#{proxy}")

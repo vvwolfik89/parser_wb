@@ -73,7 +73,8 @@ class ProductsController < ApplicationController
   end
 
   def current_report
-    service = Reports::DailyReportService.new(@product)
+    service = ParserService.new(@product)
+    @value = service.show_data
   end
 
   private

@@ -1,9 +1,9 @@
 module Reports
   class DailyReportService
-    attr_reader :date_range
+    attr_reader :product
 
-    def initialize(date_range)
-      @date_range = date_range
+    def initialize(product)
+      @product = product
     end
 
     def build_data
