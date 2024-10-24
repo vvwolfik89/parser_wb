@@ -19,6 +19,9 @@
         <p>O_E: <%= @product.body %></p>
     </div>
 
+<%= link_to 'Upload from Excel',
+         current_report_products_path(@product), class: "import_Product_link"
+%>
 
 <!--    <table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">-->
 <!--      <thead>-->

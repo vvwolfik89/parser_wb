@@ -72,6 +72,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def current_report
+    service = Reports::DailyReportService.new(@product)
+  end
+
   private
   def resource_params
     params.require(:product).permit(:title, :num, :count, :body)
