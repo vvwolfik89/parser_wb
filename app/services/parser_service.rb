@@ -25,10 +25,10 @@ class ParserService
 
     # proxy = "42.200.57.252:3128"
 
-    o_e = product.title
-    url = "https://tehnomir.com.ua/index.php?r=product%2Fsearch&SearchForm%5Bcode%5D=#{o_e}&SearchForm%5BbrandId%5D=&SearchForm%5BprofitLevel%5D=&SearchForm%5BdaysFrom%5D=&SearchForm%5BdaysTo%5D=&sort=priceOuterPrice&SearchForm%5BcatalogRequest%5D="
+    title = product.title
+    url = "https://www.wildberries.by/catalog/0/search.aspx?search=#{title}"
 
-    html = URI.open(url) #, :proxy => "http:#{proxy}")
+    html = URI.open(URI::Parser.new.escape(url)) #, :proxy => "http:#{proxy}")
 
     doc = Nokogiri::HTML(html)
 

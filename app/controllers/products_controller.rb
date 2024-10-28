@@ -60,6 +60,7 @@ class ProductsController < ApplicationController
   end
 
   def daily_report
+    @product = Product.find(params[:id])
     service = Reports::DailyReportService.new(current_date_range)
     @value = service.build_data
     respond_to do |format|
@@ -73,6 +74,7 @@ class ProductsController < ApplicationController
   end
 
   def current_report
+    @product = Product.find(params[:product])
     service = ParserService.new(@product)
     @value = service.show_data
   end
